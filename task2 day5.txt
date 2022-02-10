@@ -1,0 +1,37 @@
+using System;
+using System.Text;
+using System.Linq;
+
+
+namespace string_to_char
+{
+    class Program
+
+    {
+
+        static void Main(string[] args)
+        {
+            string[] word_temp = { "Salam","Azerbaycan","P225","HelloWorld" };
+            
+            char.TryParse(Console.ReadLine(), out  char element);
+            FindChar(word_temp, element);
+
+        }
+        static void FindChar(string[] word,char a)
+        {
+            foreach (var item in word)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    if (item[i] == a)
+                    {
+                        Console.WriteLine(item);
+                        break;
+                    }
+                }
+
+            }
+        }
+    }
+
+}

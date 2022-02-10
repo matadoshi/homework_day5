@@ -1,0 +1,53 @@
+using System;
+
+namespace Homework_task
+{
+    class Program
+    {
+        public static void Main()
+        {
+            //Console.WriteLine("Sizin Yazdiginiz Ededler");
+            int[] arr = Arrays();
+            arr = BubbleSort(arr);
+            Console.WriteLine("Bubble Sort");
+            foreach (var item in arr)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        static int[] Arrays()
+        {
+            Console.WriteLine("Arrayin uzunlugunu daxil edin");
+            int size;
+            int.TryParse(Console.ReadLine(), out size);
+            int[] arr = new int[size];
+
+            Random ranInt = new Random();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = ranInt.Next(100);
+            }
+            return arr;
+        }
+        static int[] BubbleSort(int[]arr)
+        {
+            int temp;
+            for (int i = 0; i < arr.Length-1; i++)
+            {
+                for (int j = 0; j < arr.Length-1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        temp = arr[j + 1];
+                        arr[j + 1] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+
+
+
+        }
+    }
+}
